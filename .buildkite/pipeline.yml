@@ -1,5 +1,12 @@
 steps:
-  - label: "bazel-minimal example"
-    command: "bazel run hello"
+  - label: "bazel hello example"
+    name: "Run Bazel Hello"
+    command: "bazel run //src/test/java/se/tink/hello:hello"
+    plugins:
+      - docker-compose#v3.0.3:
+          env:
+            - BUILDKITE_TRIGGER_BUILDS_API_TOKEN
+          run: app
+          config: docker/docker-compose.bazel.yml
     agents:
       queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
