@@ -1,0 +1,12 @@
+user.bazelrc
+cache/
+*.dot
+*.png
+bazel-bazel-hello
+bazel-bin
+bazel-out
+bazel-testlogs
+
+.DS_Store
+.ijwb
+hello.json
