@@ -3,7 +3,7 @@ services:
   bazels3cache:
     image: "gcr.io/tink-containers/bazels3cache:latest"
     environment:
-      - S3_BUCKET=tink-bazel-cache-build-production
+      - S3_BUCKET=tink-bazel-cache-build-staging
   app:
     image: "gcr.io/tink-containers/bazel:${BAZEL_IMAGE_TAG:-3.7.2.16}"
     working_dir: /tink-backend
@@ -13,7 +13,7 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - "${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}"
-      - ..:/tink-backend
+      - ..:/bazel-hello
       - /var/lib/buildkite-agent/.cache/bazel:/root/.cache/bazel
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent:ro
       - /var/run/docker.sock:/var/run/docker.sock
