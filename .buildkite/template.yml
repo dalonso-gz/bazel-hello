@@ -1,0 +1,5 @@
+name: "Example: bazel-minimal"
+description: "An example to build a minimal bazel project"
+steps:
+  - command: "buildkite-agent pipeline upload"
+    label: ":pipeline: upload"
