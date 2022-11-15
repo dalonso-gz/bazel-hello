@@ -3,4 +3,5 @@ services:
   app:
     image: "l.gcr.io/google/bazel:latest"
     working_dir: /bazel-hello
+    entrypoint: ./bazel-test.sh
 
