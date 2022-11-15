@@ -1,0 +1,6 @@
+version: '2'
+services:
+  app:
+    image: "l.gcr.io/google/bazel:latest"
+    working_dir: /bazel-hello
+
