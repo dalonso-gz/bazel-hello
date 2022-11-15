@@ -2,6 +2,3 @@ steps:
   - label: "bazel hello example"
     name: "Run Bazel Hello"
     command: "bazel-test.sh"
-    plugins:
-      - docker#v5.3.0:
-          image: "l.gcr.io/google/bazel:latest"
